@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$和jQuery</title>
+
+<script>
+  var $ = 'hello';
+  var jQuery = 'jQuery';
+</script>
+
+<script src="jquery-2.0.3.js"></script>
+
+<script>
+
+//在这种情况下，加载jQuery库的时候，$和jQuery变量已经被覆盖，jQuery库内部访问不到window下的$和jQuery，因为其分别被保存到了_$和_jQuery中；
+
+/*
+$(function() {
+  alert($);
+  alert(jQuery);
+});
+
+alert($);
+*/
+
+/*
+ 如果在jQuery库中还想继续访问window域的$和jQuery变量，那么需要调用jQuery.noConflict(true)。
+ noConflict不加参数的时候，jQuery库放弃$，加参数的时候再放弃jQuery变量。
+*/
+
+var jq = jQuery.noConflict(true);
+
+jq(function() {
+  alert($);
+  alert(jQuery);
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>取值和赋值</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('div').html('hello');  //给一组标签赋值
+
+  alert($('#div2').html());
+
+  alert($('div').html());  //当访问一组标签的html()方法时返回的是第一个
+});
+</script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

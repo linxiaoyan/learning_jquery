@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>链式操作</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('#div1').css('background', 'red').html('hello jQuery').click(function() {
+    alert($(this).html());  //jq的写法
+    alert(this.innerHTML);  //js的写法
+  });
+});
+</script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

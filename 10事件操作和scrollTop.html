@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件操作和scrollTop</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('div').css({width:50, height:50, margin:10, background: 'red'});
+
+  $('#div1').click(function() {
+    alert($(this).html());
+  });
+
+  $('#div2').on('click', function() {
+    alert($(this).html());
+  });
+
+  $('#div3').on('click mouseover', function() {
+    alert($(this).html());
+  });
+
+  $('#div4').on({
+    click: function() {
+      alert('click');
+    },
+    mouseover: function() {
+      alert('mouseover');
+    }
+  });
+
+  $('#div5').on({
+    click: function() {
+      alert('click');
+    },
+    mouseover: function() {
+      alert('mouseover');
+      $(this).off('mouseover');
+    }
+  });
+
+  $(document).on('click', function() {
+    alert($(window).scrollTop());
+  });
+});
+</script>
+</head>
+<body style="height:2000px;">
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+<div id="div4">div4</div>
+<div id="div5">div5</div>
+</body>
+</html>

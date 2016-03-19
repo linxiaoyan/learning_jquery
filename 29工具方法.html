@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>工具方法</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+
+//$().css()  $().html()  $().val()  : 只能给JQ对象用
+
+//$.xxx()  $.yyy()  $.zzz()  : 不仅可以给JQ用，也可以给原生JS用 : 叫做工具方法
+
+$(function() {
+
+  var a = [];
+
+  alert(typeof a);
+
+  alert($.type(a));
+
+  var str = '   hello  ';
+
+  alert('('+$.trim(str)+')');
+
+  var arr = ['a','b','c','d'];
+
+  alert($.inArray('b', arr));  //返回下标
+  alert($.inArray('e', arr));  //没找到返回-1
+
+  function show(n1, n2){
+    alert(n1);
+    alert(n2);
+    alert(this);
+  }
+
+  show();
+
+  //proxy() : 改变this指向的
+  $.proxy(show, document, 3)(4);
+
+  $(document).click($.proxy(show, window, 3, 4));
+
+
+  var json = '{"name": "hello"}';
+  alert($.parseJSON(json).name);
+
+  var aDiv = document.getElementsByTagName('div');  //类数组 {0: div, 1: div, length: 2}
+
+  console.log($.makeArray(aDiv));
+});
+
+</script>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>

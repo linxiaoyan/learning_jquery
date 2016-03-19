@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hover和简单动画</title>
+
+<style>
+#div1 {width:100px; height:100px; background:red;}
+#div2 {width:100px; height:100px; background:green;}
+</style>
+
+<script src="jquery-2.0.3.js"></script>
+<script>
+$(function(){
+  $('#div1').hover(function() {
+    $(this).css('background','blue');
+
+    //$('#div2').hide(2000);
+
+    //$('#div2').fadeOut(1000);  //默认400
+
+    $('#div2').slideUp();
+
+    //$('#div2').fadeTo(1000, 0.5);
+  }, function() {
+    $(this).css('background','red');
+
+    //$('#div2').show(2000);
+
+    //$('#div2').fadeIn(1000);
+
+    $('#div2').slideDown();
+
+    //$('#div2').fadeTo(1000, 1);
+  });
+});
+</script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

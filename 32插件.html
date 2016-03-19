@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>插件</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+  //extend的使用：
+$(function() {
+
+  //当只写一个对象自变量的时候，jq中扩展插件的形式
+
+  //1、扩展jq工具方法
+  $.extend({
+    aaa: function() {
+      alert('1');
+    }
+  });
+
+  $.aaa();
+
+  //2、扩展jq实例方法
+  $.fn.extend({
+    aaa: function() {
+      alert('2');
+    }
+  });
+
+  $().aaa();
+
+/*======================================================*/
+
+  //当写多个对象自变量的时候，后面的对象都是扩展到第一个对象身上
+
+  var a = {};
+  $.extend(a, {name: 'carter', age: 30}, {country: 'USA'});
+  alert(a.name);
+  alert(a.country);
+
+/*======================================================*/
+
+  //深拷贝和浅拷贝
+
+  var b = {};
+  var c = {};
+  var d = {name: {firstName: 'vincent', lastName: 'carter'}};
+
+  $.extend(b, d);       //浅拷贝
+  $.extend(true, c, d); //深拷贝
+
+  alert(d.name.firstName);
+
+  c.name.firstName = 'king';
+  alert(d.name.firstName);
+
+  b.name.firstName = 'super';
+  alert(d.name.firstName);
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

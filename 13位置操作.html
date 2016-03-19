@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>位置操作</title>
+
+<style>
+div, body {padding:0; margin:0;}
+#div1 {position:relative; width:400px; height:700px; margin-left:50px; background:red;}
+#div2 {width:100px; height:100px; margin-bottom:50px; background:blue;}
+#div3 {width:100px; height:100px; margin:100px 0 0 50px; background:green;}
+#div4 {position:absolute; left:50px; width:100px; height:100px; margin:50px; background:yellow;}
+#div5 {position:relative; left:50px; width:100px; height:100px; margin:100px; background:pink;}
+</style>
+
+<script src="jquery-2.0.3.js"></script>
+<script>
+$(function() {
+  /*
+  alert($('#div1').offset().left);
+  alert($('#div1').position().left);
+
+  alert($('#div2').offset().left);
+  alert($('#div2').position().left);
+
+  alert($('#div3').offset().left);
+  alert($('#div3').position().left);
+
+  alert($('#div4').offset().left);
+  alert($('#div4').position().left);
+
+  alert($('#div5').offset().left);
+  alert($('#div5').position().left);
+  */
+})
+</script>
+</head>
+<body>
+<div id="div1">
+  <div id="div2">margin-bottom:50px;</div>
+  <div id="div3">margin:100px 0 0 50px;</div>
+  <div id="div4">position:absolute; left:50px; margin:50px;</div>
+  <div id="div5">position:relative; left:50px; margin:100px;</div>
+</div>
+</body>
+</html>

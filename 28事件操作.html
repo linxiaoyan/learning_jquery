@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件操作</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function(){
+  //事件委托
+
+  $('ul').delegate('li', 'click', function() {
+    $(this).siblings().css('background', '');
+    $(this).css('background', 'red');
+    //$('ul').undelegate();
+  });
+
+  $('#div1').on('show', function() {
+    alert(123);
+  });
+
+  //事件细节，传递数据
+
+  $('#div1').on('show', {name: 'jq'}, function(ev) {
+    alert(ev.data.name);
+    alert(ev.target);
+    alert(ev.type);
+  });
+
+  //主动触发，主要用来触发一些自定义事件
+
+  $('#div1').trigger('show');
+});
+</script>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM操作</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('#div3').insertBefore($('#div2')); //div1,div2,div3 --> div1,div3,div2
+
+  $('#div1').insertAfter($('#div2'));  //div1,div3,div2 --> div3,div2,div1
+
+  $('#span1').appendTo($('#div1')).css('background', 'red');
+
+  $('#span3').prependTo($('#div3')).css('background', 'blue');
+
+
+
+  $('#span2').insertBefore($('#div2')).css('background', 'green');  //css修改的是span
+
+  $('#div2').after($('#span2')).css('background', 'yellow');  //css修改的是div
+
+
+  $('#div4').remove();
+});
+</script>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+<div id="div4">div4</div>
+<span id="span1">span1</span>
+<span id="span2">span2</span>
+<span id="span3">span3</span>
+</body>
+</html>

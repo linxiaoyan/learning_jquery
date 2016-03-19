@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>html与text</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('div').html('<h1>title</h1>');  //$('div').text('<h1>title</h1>');  //h1标签不会被解析，只当成字符串
+  alert($('div').html());  //获取第一div的innerHTML
+  alert($('div').text());  //获取所有元素除去标签的内容
+});
+</script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

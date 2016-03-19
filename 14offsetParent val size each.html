@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>offsetParent val size each</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('#div3').parent().css('background', 'yellow');
+  $('#div3').offsetParent().css('border', '5px solid black');
+
+  alert($('#input1').val());
+  $('#input1').val('456');
+
+  alert($('li').size());
+
+  $('li').each(function(i, elem) {
+    $(elem).html(i);
+  });
+
+});
+</script>
+</head>
+<body>
+<div id="div1" style="position:relative;padding:50px; background:green;">
+  <div id="div2" style="padding:50px; background:blue;">
+    <div id="div3" style="padding:50px; background:red;"></div>
+  </div>
+</div>
+
+<input id="input1" value="123"/>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>next prev find eq index</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('div').eq(0).next().css('background', 'red');
+
+  $('div').eq(0).next().prev().css('background', 'blue');
+
+  $('div').find('ul').eq(1).css('background', 'yellow');
+
+  $('div').find('ul').filter('#ul1').css('background', 'green');
+
+  alert($('div').find('ul').filter('#ul2').index());
+
+});
+</script>
+</head>
+<body>
+<div>div</div>
+<div>div</div>
+<div>
+  <ul id="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul id="ul2">
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+</body>
+</html>

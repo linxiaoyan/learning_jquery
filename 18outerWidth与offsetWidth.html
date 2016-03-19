@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>outerWidth与offsetWidth</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  alert($('#div1').get(0).offsetWidth);  //获取不到隐藏元素的值
+  alert($('#div1').outerWidth(true));
+});
+</script>
+</head>
+<body>
+<div id="div1" style="display:none; width:100px; height:100px; border:50px solid black; margin:50px; background:red;"></div>
+</body>
+</html>

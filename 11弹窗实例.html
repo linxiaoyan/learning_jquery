@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>弹窗实例</title>
+
+<style>
+div, body {padding:0; margin:0}
+#mask {position:absolute; left:0; top:0; background:#000; opacity:0.3; filter:alpha(opacity=30);}
+#box {position:absolute; width:300px; height:200px; padding:10px; border:5px solid black; background:white;}
+#box a {float:right; width:20px; height:20px; line-height:20px; text-align:center; color:black; background:white;}
+#box a:hover {color:white; background:black;}
+</style>
+
+<script src="jquery-2.0.3.js"></script>
+<script>
+$(function() {
+  $('#input1').on('click', function() {
+    var oMask = $('<div id="mask"></div>');
+    var oBox = $('<div id="box"><a id="close">×</a>这是弹窗的内容</div>');
+
+    $('body').append([oMask, oBox]);
+    $('#mask').css({width: $(document).width(), height: $(document).height()});
+    setToCenter(oBox);
+
+    function setToCenter(obj) {
+      obj.css({left: ($(window).width() - obj.outerWidth()) / 2 + $(window).scrollLeft(),
+        top: ($(window).height() - obj.outerHeight()) / 2 + $(window).scrollTop()});
+    }
+
+    $('#close').on('click', function() {
+      oBox.remove();
+      oMask.remove();
+    });
+
+    $(window).on('resize scroll', function() {
+      setToCenter(oBox);
+    });
+  });
+});
+</script>
+</head>
+<body style="width:2000px; height:2000px;">
+<input id="input1" type="button" value="登录"/>
+<!--
+<div id="mask"></div>
+<div id="box">
+  <a>×</a>
+  这是弹窗的内容
+</div>
+-->
+</body>
+</html>

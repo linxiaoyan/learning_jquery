@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>attr filter not has</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('div').css({width:100, height:100, margin:20});
+
+  $('div').not('.div1').css('background', 'blue');
+
+  $('div').filter('.div1').css('background', 'red');
+
+  $('div').filter('[title=last]').css('background', 'yellow');
+
+  $('div').has('span').css('background', 'pink');
+});
+</script>
+</head>
+<body>
+<div id="div1"></div>
+<div class="div1"></div>
+<div class="div1">
+  <span></span>
+</div>
+<div title="last"></div>
+</body>
+</html>

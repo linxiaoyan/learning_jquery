@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数据串联化</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function(){
+  console.log($('form').serialize());  //string: a=1&b=2&c=3
+
+  console.log($('form').serializeArray());
+  /*
+  [{name: 'a', value: '1'},
+   {name: 'b', value: '2'},
+   {name: 'c', value: '3'}]
+  * */
+});
+</script>
+</head>
+<body>
+<form>
+  <input type="text" name="a" value="1">
+  <input type="text" name="b" value="2">
+  <input type="text" name="c" value="3">
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ajax</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$.ajax({
+  url: 'xxx.php',
+  // type: 'POST', //默认GET
+  // data: 'name=jq&age=20',
+  // dataType: 'jsonp', //指定返回数据类型
+  success: function() {
+    alert('success');
+  },
+  error: function() {
+    alert('fail');
+  }
+});
+
+
+$.ajax({
+  url: 'xxx.php'
+}).done(function() {
+  alert('success');
+}).fail(function() {
+  alert('fail');
+});
+
+//抽象出来的方法
+
+$.get('xxx.php', function() {
+  alert('success');
+});
+
+$.post('xxx.php', function() {
+  alert('success');
+});
+
+$.getJSON('xxx.php?callback=?', function(data) {
+  //data
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

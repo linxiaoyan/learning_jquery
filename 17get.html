@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>get</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+
+//get() 就是把JQ转成原生JS
+
+$(function(){
+  for(var i = 0; i < $('li').get().length; i++) {
+    $('li').get(i).innerHTML = i;
+    $('li').get(i).style.background = 'red';  //$('li')[i].style.background = 'red';
+  }
+
+  /*
+  for(var i = 0; i < $('li').length; i++){
+    $('li').eq(i).html(i * i);
+    $('li').eq(i).css('background', 'blue');
+  }
+  */
+});
+</script>
+</head>
+<body>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+</body>
+</html>

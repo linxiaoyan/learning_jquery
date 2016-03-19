@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>拖拽实例</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('#div1').mousedown(function(ev) {
+    var disX = ev.pageX - $(this).offset().left;
+    var disY = ev.pageY - $(this).offset().top;
+
+    //鼠标拖动太快的时候有可以移出div，所以mousemove事件需添加到document上
+    $(document).mousemove(function(ev) {
+      $('#div1').css('left', ev.pageX - disX);
+      $('#div1').css('top', ev.pageY - disY);
+    });
+
+    //document的mouseup事件实际上是从div冒泡过来的
+    $(document).mouseup(function() {
+      $(document).off();
+    });
+
+    return false;
+  });
+});
+</script>
+</head>
+<body>
+<div id="div1" style="position:absolute; width:100px; height:100px; background:red;"></div>
+</body>
+</html>

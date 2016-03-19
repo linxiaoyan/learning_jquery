@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>detach和remove</title>
+  <script src="jquery-2.0.3.js"></script>
+
+<script>
+$(function() {
+  $('#div1').click(function() {
+    alert($(this).find('span').eq(0).html());
+  });
+
+  $('#div2').click(function() {
+    alert($(this).find('span').eq(0).html());
+  });
+
+
+  var oDiv1 = $('#div1').remove();
+  var oDiv2 = $('#div2').detach();  //没有删除元素的事件
+
+  $('body').append([oDiv1, oDiv2]);
+
+});
+</script>
+</head>
+<body>
+<div id="div1">
+  <span>div1</span>
+</div>
+<div id="div2">
+  <span>div2</span>
+</div>
+</body>
+</html>
